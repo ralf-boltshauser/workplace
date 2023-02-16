@@ -16,4 +16,6 @@ mkdir -p ~/.config
 cp -R i3 ~/.config
 cp -R polybar ~/.config
 
+cp -R vim/.vimrc ~
+
 i3-msg restart
