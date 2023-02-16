@@ -2,4 +2,6 @@
 
 
 killall -q polybar
-polybar parrot
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    MONITOR=$m polybar --reload parrot &
+done

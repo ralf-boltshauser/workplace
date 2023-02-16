@@ -172,4 +172,4 @@ exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/macaw-poly2.jp
 bindsym Control+Shift+l exec "i3lock"
 bindsym Mod1+section exec "bash /home/sai04/i3/setup.sh"
 bindsym $mod+Tab exec --no-startup-id "rofi -show"
-bindsym $mod+Shift+p exec "bash /home/sai04/i3/panic.sh"
+bindsym $mod+Shift+p exec "bash ~/workplace/i3/panic.sh"
