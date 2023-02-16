@@ -339,7 +339,7 @@ margin-bottom = 5
 [module/test]
 type = custom/script
 
-exec = if [ $(cat /sys/class/net/wlp0s20f3/operstate) = "up" ]; then echo %{A:/sbin/ifconfig wlp0s20f3 down:} Wlan Up %{A}; else echo '%{A:/sbin/ifconfig wlp0s20f3 up:} Wlan Down %{A}'; fi
+exec = if [ $(cat /sys/class/net/wlp0s20f3/operstate) = "up" ]; then echo %{A:/sbin/ifconfig wlp0s20f3 down:}%{A}; else echo '%{A:/sbin/ifconfig wlp0s20f3 up:}   %{A}'; fi
 interval = 1
 
 format = <label>
