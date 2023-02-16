@@ -170,6 +170,6 @@ client.focused          #2e3436 #2e3436 #ffffff #2e3436   #2e3436
 exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/macaw-poly2.jpg
 
 bindsym Control+Shift+l exec "i3lock"
-bindsym Mod1+section exec "bash /home/sai04/i3/setup.sh"
+bindsym Mod1+section exec "bash ~/workplace/i3/startup.sh"
 bindsym $mod+Tab exec --no-startup-id "rofi -show"
 bindsym $mod+Shift+p exec "bash ~/workplace/i3/panic.sh"
