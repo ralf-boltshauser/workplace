@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install i3 rofi polybar
+sudo apt install i3 btop xdotool rofi polybar -y
 mkdir -p ~/.config
 cp -R i3 ~/.config
 cp -R polybar ~/.config
