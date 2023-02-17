@@ -24,5 +24,5 @@ cp -R i3 ~/.config
 cp -R polybar ~/.config
 
 cp vim/.vimrc ~
-
+cp bash/.bashrc ~
 i3-msg restart

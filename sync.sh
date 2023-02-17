@@ -4,3 +4,4 @@ rm -rf polybar
 cp -R ~/.config/i3 .
 cp -R ~/.config/polybar .
 cp ~/.vimrc vim/.
+cp ~/.bashrc bash/.
