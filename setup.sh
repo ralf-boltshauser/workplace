@@ -23,6 +23,6 @@ mkdir -p ~/.config
 cp -R i3 ~/.config
 cp -R polybar ~/.config
 
-cp vim/.vimrc ~
-cp bash/.bashrc ~
+echo vim/.vimrc >> ~/.vimrc
+echo bash/.bashrc >> ~/.bashrc
 i3-msg restart

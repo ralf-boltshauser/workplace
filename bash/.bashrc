@@ -5,7 +5,7 @@ eval $(thefuck --alias FUCK)
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 source <(ng completion script)
-export PATH=/home/sai04/development/flutter/bin:$PATH
+export PATH=~/development/flutter/bin:$PATH
 
 alias bat="batcat"
 alias "c=xclip -selection clipboard"
