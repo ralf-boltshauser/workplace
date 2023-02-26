@@ -9,7 +9,7 @@ git clone https://github.com/ralf-boltshauser/workplace.git
 cd workplace
 
 # installations 
-sudo apt install vim bat btop xclip -y 
+sudo apt install vim bat xclip -y 
 
 # setting up rc's
 cat vim/.vimrc >> ~/.vimrc
