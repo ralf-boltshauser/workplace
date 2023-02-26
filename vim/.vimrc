@@ -1,6 +1,5 @@
 set hidden
 set number
-inoremap hh <Esc> 
 noremap j <Left>
 noremap k <Down>
 noremap l <Up>
