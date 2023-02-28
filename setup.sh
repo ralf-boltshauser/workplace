@@ -2,7 +2,7 @@
 # installing tools
 sudo apt update
 sudo apt remove neovim -y
-sudo apt install i3 btop xdotool rofi polybar vim docker.io git  maim xclip -y
+sudo apt install i3 btop xdotool rofi polybar vim docker.io git maim xclip zsh -y
 
 ## vs code
 sudo apt install software-properties-common apt-transport-https wget -y
@@ -23,6 +23,9 @@ mkdir -p ~/.config
 cp -R i3 ~/.config
 cp -R polybar ~/.config
 
-echo vim/.vimrc >> ~/.vimrc
-echo bash/.bashrc >> ~/.bashrc
+# setting up rc's
+cat vim/.vimrc >> ~/.vimrc
+cat bash/.bashrc >> ~/.bashrc
+cat zsh/.zshrc >> ~/.zshrc
+
 i3-msg restart
