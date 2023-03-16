@@ -44,6 +44,17 @@ if [[ $@ == *"--install"* ]]; then
 	sudo apt update -y
 	sudo apt upgrade -y
 fi 
+
+
+if [[ $@ == *"--laptop"* ]]; then  
+	sudo cp ./alert-battery/alert-battery /usr/local/bin/
+	sudo chmod +x /usr/local/bin/alert-battery
+	crontab -l >> current-crons
+	echo "*/5 * * * * export DISPLAY=:0.0 && /usr/local/bin/alert-battery" >> current-crons
+	crontab current-crons
+	rm current-crons
+
+fi
 # setting up environment
 mkdir -p ~/.config
 cp -R i3 ~/.config
