@@ -3,9 +3,27 @@
 if [[ $@ == *"--install"* ]]; then  
 	# installing tools
 	sudo apt update
-	sudo apt remove neovim -y
-	sudo apt install i3 btop xdotool rofi polybar vim docker.io git maim xclip zsh -y
+	sudo apt install i3 btop xdotool rofi polybar nvim docker.io git maim xclip zsh ripgrep -y
+	# diff-so-fancy
+	cd ~/.local/share
+	git clone https://github.com/so-fancy/diff-so-fancy.git
+ 	git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+	git config --global interactive.diffFilter "diff-so-fancy --patch"
+	git config --global color.ui true
 
+	git config --global color.diff-highlight.oldNormal    "red bold"
+	git config --global color.diff-highlight.oldHighlight "red bold 52"
+	git config --global color.diff-highlight.newNormal    "green bold"
+	git config --global color.diff-highlight.newHighlight "green bold 22"
+
+	git config --global color.diff.meta       "11"
+	git config --global color.diff.frag       "magenta bold"
+	git config --global color.diff.func       "146 bold"
+	git config --global color.diff.commit     "yellow bold"
+	git config --global color.diff.old        "red bold"
+	git config --global color.diff.new        "green bold"
+	git config --global color.diff.whitespace "red reverse"
+	cd ~/workplace
 	## vs code
 	sudo apt-get install wget gpg
 	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -69,9 +87,9 @@ cp -R i3 ~/.config
 cp -R polybar ~/.config
 
 # setting up rc's
-cat vim/.vimrc >> ~/.vimrc
-cat bash/.bashrc >> ~/.bashrc
-cat zsh/.zshrc >> ~/.zshrc
+cat vim/.vimrc > ~/.vimrc
+cat bash/.bashrc > ~/.bashrc
+cat zsh/.zshrc > ~/.zshrc
 
 # setting up jarvis
 if [[ $@ == *"--jarvis"* ]]; then

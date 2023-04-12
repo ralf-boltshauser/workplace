@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/sbin:$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/sbin:$HOME/.local/bin:~/.local/share/diff-so-fancy:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -100,5 +100,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias bat="batcat"
 alias "c=xclip -selection clipboard"
+alias vim="nvim"
 
 eval $(thefuck --alias)
+
