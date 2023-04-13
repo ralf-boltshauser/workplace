@@ -3,7 +3,14 @@
 if [[ $@ == *"--install"* ]]; then  
 	# installing tools
 	sudo apt update
-	sudo apt install i3 btop xdotool rofi polybar nvim docker.io git maim xclip zsh ripgrep -y
+	sudo apt install i3 btop xdotool rofi polybar neovim docker.io git maim xclip zsh ripgrep -y
+ 	# nvim & plugins etc
+    rm ~/.config/nvim/init.vim
+    mkdir ~/.config/nvim
+    ln -s ~/.vimrc ~/.config/nvim/init.vim
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	vim +'PlugInstall' +qa
 	# diff-so-fancy
 	cd ~/.local/share
 	git clone https://github.com/so-fancy/diff-so-fancy.git
@@ -50,7 +57,7 @@ if [[ $@ == *"--install"* ]]; then
 	sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386	
 	rm android-studio-2022.1.1.21-linux.tar.gz
 	echo 'export PATH="$PATH:~/development/android-studio/bin"' >> ~/.zshrc
-	cd
+	cd ~/workplace
 
 	## google chrome
 	

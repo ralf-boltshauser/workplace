@@ -103,4 +103,4 @@ alias "c=xclip -selection clipboard"
 alias vim="nvim"
 
 eval $(thefuck --alias)
-
+source ~/.profile
