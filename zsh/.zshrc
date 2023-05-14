@@ -104,3 +104,4 @@ alias vim="nvim"
 
 eval $(thefuck --alias)
 source ~/.profile
+set -o vi
