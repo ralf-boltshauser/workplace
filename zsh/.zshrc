@@ -100,7 +100,16 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias "c=xclip -selection clipboard"
 alias vim="nvim"
-alias ghcr='repo_name=$(basename "$(pwd)") && json=$(gh repo create $repo_name --private -y) && ssh_url="git@github.com:$(gh api user --jq '\''\.login'\'')/$(basename "$(pwd)")" && git init && git remote add origin $ssh_url && ga . && gcam "init" && git push --set-upstream origin master'
+ghcr() {
+  repo_name=$(basename "$(pwd)")
+  json=$(gh repo create $repo_name --private -y)
+  ssh_url="git@github.com:$(gh api user --jq '.login')/$(basename "$(pwd)")"
+  git init
+  git remote add origin $ssh_url
+  ga .
+  gcam "init"
+  git push --set-upstream origin master
+}
 
 eval $(thefuck --alias)
 source ~/.profile
