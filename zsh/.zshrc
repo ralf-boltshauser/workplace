@@ -108,9 +108,63 @@ ghcr() {
   git remote add origin $ssh_url
   ga .
   gcam "init"
-  git push --set-upstream origin master
+  git push --set-upstream origin main
 }
+
+alias pn="pnpm"
+alias px="pnpm dlx"
+alias lg="lazygit"
+alias ld="lazydocker"
 
 eval $(thefuck --alias)
 source ~/.profile
 set -o vi
+
+
+# some stuff i have currently lol
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+# alias gpb='function _gpb(){ git add . && git commit -am "$1" && git push; }; _gpb'
+#
+#
+# # bun completions
+# [ -s "/Users/ralf/.bun/_bun" ] && source "/Users/ralf/.bun/_bun"
+#
+# # bun
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
+#
+# # bun
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
+#
+# # pnpm
+# export PNPM_HOME="/Users/ralf/Library/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+# # pnpm end
+#
+# mov2mp4() {
+#     if [[ -z "$1" ]]; then
+#         echo "Usage: mov2mp4 filename.mov"
+#         return 1
+#     fi
+#     local input_file="$1"
+#     local output_file="${input_file%.*}.mp4"
+#
+#     ffmpeg -i "$input_file" -vcodec h264 -acodec mp3 "$output_file"
+# }
+#
+# # Add Bun and local binaries to PATH
+# export PATH="$HOME/.local/bin:$HOME/.bun/bin:$PATH"
+# . "/Users/ralf/.deno/env"
+#
+# # Initialize zsh completions (added by deno install script)
+# autoload -Uz compinit
+# compinit
