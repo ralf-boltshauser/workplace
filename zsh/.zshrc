@@ -168,3 +168,33 @@ set -o vi
 # # Initialize zsh completions (added by deno install script)
 # autoload -Uz compinit
 # compinit
+#
+pd () {
+	lsof -i :3000 | grep -i "listen" | awk '{print $2}' | xargs kill -9 2>/dev/null || true
+	pnpm dev
+}
+
+pk() {
+  if [ -z "$1" ]; then
+    echo "Usage: pk <port>"
+    return 1
+  fi
+
+  local pid
+  pid=$(lsof -t -i :"$1")
+  
+  if [ -z "$pid" ]; then
+    echo "No process found on port $1"
+    return 0
+  fi
+
+  echo "Killing process on port $1 (PID: $pid)"
+  kill -9 $pid
+}
+
+# Modern ls replacements using eza
+alias ls="eza --icons"
+alias ll="eza -l --git --group-directories-first"
+alias la="eza -la --git --group-directories-first"
+alias lt="eza --tree --level=2"
+
